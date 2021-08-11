@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: work2
+spec:
+  rules:
+  - host: work2.tutorial-k8s.intrtl.com
+    http:
+      paths:
+      - backend:
+          serviceName: work2
+          servicePort: 80
+        path: /
+

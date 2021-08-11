@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: work2-http
+  name: work2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: work2-http
+  template:
+    metadata:
+      labels:
+        app: work2-http
+    spec:
+      containers:
+      - image: gkoenig/simplehttp
+        name: work2-http
+        ports:
+        - containerPort: 8000
+        env:
+          - name: message
+            valueFrom:
+              configMapKeyRef:
+                name: config-work2
+                key: message
+

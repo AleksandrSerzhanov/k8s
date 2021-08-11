@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: my-project-01
+spec:
+  rules:
+  - host: app1.tutorial-k8s.intrtl.com
+    http:
+      paths:
+      - backend:
+          serviceName: my-project-01
+          servicePort: 80
+        path: /
+
