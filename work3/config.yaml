@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: work3-config
+data:
+  default.conf: |
+    server {
+        listen 80;
+        server_name _;
+        default_type text/plain;
+        location / {
+            index index.html;
+            root /usr/share/nginx/html;
+        }
+     }
+
+  index.html: |
+    <!DOCTYPE html> 
+    <html lang="ru-RU"> 
+     <head> 
+      <meta charset="UTF-8"> 
+      <title>КартинкА</title> 
+     </head> 
+     <body> 
+      <h1>КартинкА</h1>
+      <img src="images/1.jpg">
+     </body> 
+    </html> 
+
